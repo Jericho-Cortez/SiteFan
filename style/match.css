@@ -79,7 +79,9 @@ body {
     background-color: #085029;
     color: white;
 }
-
+.classement td:hover {
+    font-size: 18px;
+  }
 
 .Analyse h2{
     display: flex;
