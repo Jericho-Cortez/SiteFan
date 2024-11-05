@@ -49,32 +49,32 @@ body {
 
 /* Header with title and description */
 .intro {
-    text-align: center;
+    display: flex;
+    justify-content: center;
     padding-top: 40px;
     background-color: #F0E2C8;
-    align-items: flex-end;
 
 }
 
 .intro h1 {
+    align-self: center;
     font-size: 2.5em;
     color: #333;
     font-family: fantasy;
 }
 
 
-.tableau{
+.classement{
     display: flex;
     justify-content: center;
-    align-items: center;
 }
-.tableau table,th{
+.classement table,th{
     border: black solid 3px;
 }
-.tableau th{
+.classement th{
     background-color: #F0E2C8;
 }
-.tableau td{
+.classement td{
     background-color: #085029;
     color: white;
 }
