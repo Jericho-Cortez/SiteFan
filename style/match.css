@@ -82,9 +82,6 @@ body {
 .classement td a{
     color: white;
 }
-.match a:hover{
-    font-size: 18px;
-  }
 
 .Analyse h2{
     display: flex;
