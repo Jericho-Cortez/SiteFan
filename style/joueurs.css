@@ -69,7 +69,7 @@ body {
     border: 2px solid #ccc;
     border-radius: 12px;
     overflow: hidden;
-    background-color: #fff;
+    background-color: #333;
     transition: transform 0.2s, box-shadow 0.2s;
   }
   
@@ -92,7 +92,31 @@ body {
     background-color: #333;
     color: #fff;
   }
-  
+  .hide {
+    display: none;
+    background-color: #333;
+    height: auto;
+    width: auto;
+  }
+  .myDIV {
+    background-color: #333;
+    display: flex;
+    color: white;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    font-size: large;
+    padding-top: 10px;
+
+    height: auto;
+    width: auto;
+  }
+  .myDIV:hover + .hide {
+    display: block;
+    color: white;
+    height: auto;
+    width: auto;
+  }
   
   .intro {
     display: flex;
