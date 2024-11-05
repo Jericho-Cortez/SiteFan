@@ -49,23 +49,17 @@ body {
 
 /* Header with title and description */
 .intro {
-    text-align: center;
-    padding-top: 40px;
-    background-color: #e0f7fa;
-    align-items: flex-end;
+    display: flex;
+    justify-content: center;
+    padding-top: 0px;
+    background-color: #F0E2C8;
+    gap: 20px;
 
 }
 
 .intro h1 {
+    align-self: center;
     font-size: 2.5em;
     color: #333;
     font-family: fantasy;
-
-}
-
-.intro p {
-    max-width: 600px;
-    margin: 10px auto;
-    font-size: 1.1em;
-    color: #666;
 }
