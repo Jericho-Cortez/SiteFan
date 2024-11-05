@@ -79,7 +79,10 @@ body {
     background-color: #085029;
     color: white;
 }
-.classement td:hover {
+.classement td a{
+    color: white;
+}
+.match a:hover{
     font-size: 18px;
   }
 
