@@ -47,25 +47,47 @@ body {
     outline: none;
 }
 
-/* Header with title and description */
-.intro {
+  
+
+  .player-row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 10px;
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+  
+  .player-box {
+    padding-top: 1%;
+    width: 250px;
+    height: auto;
     text-align: center;
-    padding-top: 40px;
-    background-color: #e0f7fa;
-    align-items: flex-end;
-
-}
-
-.intro h1 {
-    font-size: 2.5em;
-    color: #333;
-    font-family: fantasy;
-
-}
-
-.intro p {
-    max-width: 600px;
-    margin: 10px auto;
+    text-decoration: none;
+    color: black;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #fff;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .player-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .player-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .player-box p {
+    padding: 10px;
     font-size: 1.1em;
-    color: #666;
-}
+    display: flex;
+    justify-content: center;
+  }
+  
