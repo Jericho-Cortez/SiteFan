@@ -117,6 +117,14 @@ body {
       padding: 20px;
       margin: 10px;
     }
+    .Analyse h2 {
+        font-size: 1.8em;
+      }
+    
+      .Analyse p {
+        font-size: 1em;
+        padding: 0 10px;
+      }
 }
 footer {
     text-align: center;
