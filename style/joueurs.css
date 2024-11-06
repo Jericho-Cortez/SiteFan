@@ -97,6 +97,7 @@ body {
     background-color: #333;
     height: auto;
     width: auto;
+
   }
   .myDIV {
     background-color: #333;
@@ -107,7 +108,6 @@ body {
     justify-content: center;
     font-size: large;
     padding-top: 10px;
-
     height: auto;
     width: auto;
   }

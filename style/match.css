@@ -75,12 +75,12 @@ body {
 .classement th{
     background-color: #F0E2C8;
 }
-.classement td{
+.classement td, .classement td a{
     background-color: #085029;
     color: white;
 }
-.classement td a{
-    color: white;
+.classement td a:hover{
+    color: #f8b400;
 }
 
 .Analyse h2{
