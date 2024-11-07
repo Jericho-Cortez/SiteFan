@@ -78,14 +78,15 @@ footer {
     color: #fff;
   }
 
-.lacoupe2021{
-    height: 300px;; 
-    width: 400px;
-}
-
-
-.photosvictoires{
+h2 {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-style: oblique;
+      }
+      
+.firstext{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     display: flex;
-    justify-content: space-between;
-   
+    flex-direction: column;
+    font-size: larger;
 }
+
