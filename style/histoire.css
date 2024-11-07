@@ -79,12 +79,13 @@ footer {
   }
 
 .lacoupe2021{
-    height: 200px;; 
-    width: 200px;
+    height: 300px;; 
+    width: 400px;
 }
 
 
-.lacoupe1971{
-    height: 400px;; 
-    width: 400px;
+.photosvictoires{
+    display: flex;
+    justify-content: space-between;
+   
 }
