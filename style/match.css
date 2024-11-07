@@ -4,13 +4,11 @@
     box-sizing: border-box;
 }
 
-
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #F0E2C8;
 }
-
 
 .navbar {
     display: flex;
@@ -19,21 +17,26 @@ body {
     background-color: #333;
     padding: 10px 20px;
 }
+
 .nav-left ul {
     list-style-type: none;
-    li {
-        display: inline;
-        margin: 0 15px;
-    }
-    a{
-        text-decoration: none;
-        color: #f9f9f9;
-        font-weight: bold;
-    }
-    a:hover{
-        color: #f8b400;
-    }
+    display: flex;
 }
+
+.nav-left li {
+    margin: 0 15px;
+}
+
+.nav-left a {
+    text-decoration: none;
+    color: #f9f9f9;
+    font-weight: bold;
+}
+
+.nav-left a:hover {
+    color: #f8b400;
+}
+
 .nav-right input[type="text"] {
     padding: 5px 10px;
     border-radius: 5px;
@@ -41,84 +44,179 @@ body {
     outline: none;
 }
 
-
 .intro {
     display: flex;
     justify-content: center;
     padding-top: 0px;
     background-color: #F0E2C8;
     gap: 20px;
-    h1 {
-        align-self: center;
-        font-size: 2.5em;
-        color: #333;
-        font-family: fantasy;
-    }
+    text-align: center;
 }
 
+.intro h1 {
+    align-self: center;
+    font-size: 2.5em;
+    color: #333;
+    font-family: fantasy;
+}
 
-.classement{
+.classement {
     display: flex;
     justify-content: center;
-    table{
-        border: black solid 3px;
-    }
-    th{
-        border: black solid 3px;
-        background-color: #F0E2C8;
-    }
-    td{
-        background-color: #085029;
-        color: white;
-    }
-    a{
-        color: white;
-        text-decoration: none;
-    }
-    a:hover{
-        color: #f8b400;
-    }
+    margin-top: 20px;
 }
 
+.classement table {
+    border: black solid 3px;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 1000px;
+    overflow-x: auto;
+}
+
+.classement th,
+.classement td {
+    border: black solid 3px;
+    padding: 10px;
+    text-align: center;
+}
+
+.classement th {
+    background-color: #F0E2C8;
+}
+
+.classement td {
+    background-color: #085029;
+    color: white;
+}
+
+.classement a {
+    color: white;
+    text-decoration: none;
+}
+
+.classement a:hover {
+    color: #f8b400;
+}
 
 .analysis {
     max-width: 900px;
-    margin: 20px auto; 
+    margin: 20px auto;
     background-color: #fff;
     padding: 30px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    h2 {
-        font-size: 2.2em;
-        font-weight: bold;
-        color: #2e3d49;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    p {
-        font-size: 1.1em;
-        line-height: 1.7;  
-        margin-bottom: 25px;  
-        text-align: justify; 
-        color: #555; 
-        padding: 0 15px;
-    }
-    br {
-        margin-bottom: 15px;
-    } 
 }
 
+.analysis h2 {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #2e3d49;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.analysis p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    text-align: justify;
+    color: #555;
+    padding: 0 15px;
+}
+
+.analysis br {
+    margin-bottom: 15px;
+}
 
 @media (max-width: 768px) {
-    .Analyse {
-      padding: 20px;
-      margin: 10px;
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
     }
-    .Analyse h2 {
+
+    .nav-left ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .nav-left li {
+        margin-bottom: 10px;
+    }
+
+    .nav-right input[type="text"] {
+        margin-top: 10px;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .intro {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .intro h1 {
+        font-size: 2em;
+    }
+
+    .classement table {
+        width: 100%;
+        font-size: 0.9em;
+    }
+
+    .classement th,
+    .classement td {
+        padding: 8px;
+    }
+
+    .classement a {
+        font-size: 0.9em;
+    }
+
+    .analysis {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .analysis h2 {
         font-size: 1.8em;
     }
-    .Analyse p {
+
+    .analysis p {
         font-size: 1em;
         padding: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .intro h1 {
+        font-size: 1.8em;
+    }
+
+    .classement th,
+    .classement td {
+        padding: 5px;
+    }
+
+    .classement table {
+        font-size: 0.8em; 
+    }
+
+    .navbar {
+        padding: 10px;
+    }
+
+    .nav-left ul {
+        padding-left: 0;
+        margin-top: 10px;
+    }
+
+    .nav-left li {
+        margin-bottom: 8px;
+    }
+
+    .nav-right input[type="text"] {
+        width: 100%;
+        font-size: 0.9em;
     }
 }
 
@@ -127,4 +225,4 @@ footer {
     padding: 10px;
     background-color: #333;
     color: #fff;
-  }
+}
