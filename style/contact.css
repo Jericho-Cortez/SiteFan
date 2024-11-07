@@ -156,8 +156,31 @@ button:hover {
 
 
 footer {
-  text-align: center;
-  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #333;
   color: #fff;
+  padding: 20px 10px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
+}
+
+.footer-text p {
+  margin: 0;
+  font-size: 14px;
+  text-align: center;
+  color: #ccc;
+}
+
+.footer-text p a {
+  color: #f8b400;
+  text-decoration: none;
+}
+
+.footer-text p a:hover {
+  color: #f9f9f9;
 }
