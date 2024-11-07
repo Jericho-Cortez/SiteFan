@@ -78,15 +78,25 @@ footer {
     color: #fff;
   }
 
-h2 {
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      font-style: oblique;
-      }
-      
-.firstext{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+.Les_debut{
     display: flex;
-    flex-direction: column;
-    font-size: larger;
-}
+    img{
+        width: 400px;
+        height: 400px;
+        order: 1;
+    }
+  }
 
+  .texte{
+    flex-direction: column;
+    padding-left: 5%;
+    h2{
+        font-family:fantasy;
+        font-size: x-large;
+        
+    }
+    p{
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size:x-large;
+    }
+  }
