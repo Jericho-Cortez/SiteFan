@@ -82,7 +82,6 @@ body {
 }
 
 .upcoming-games ul {
-    justify-items: center;
     align-items: center;
 }
 
@@ -97,7 +96,7 @@ body {
 }
 
 .upcoming-games-content {
-    background-color: rgba(244, 2, 2, 0);
+    background-color: rgba(244, 2, 2, 0.1);
     display: flex;
     justify-content: center;
     flex-direction: column;
