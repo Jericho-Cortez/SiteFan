@@ -93,7 +93,7 @@ body {
 }
 
 .upcoming-games-content{
-    background-color: rgba(244, 2, 2, 0.666);
+    background-color: rgba(244, 2, 2, 0.2);
     display: flex;
     justify-content: center;
     flex-direction: column;
