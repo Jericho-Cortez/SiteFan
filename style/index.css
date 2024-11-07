@@ -1,9 +1,9 @@
-/* Basic reset */
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 
 body {
     font-family: Arial, sans-serif;
@@ -11,7 +11,7 @@ body {
     background-color: #F0E2C8;
 }
 
-/* Navbar styling */
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -19,27 +19,21 @@ body {
     background-color: #333;
     padding: 10px 20px;
 }
-
 .nav-left ul {
     list-style-type: none;
+    li {
+        display: inline;
+        margin: 0 15px;
+    }
+    a{
+        text-decoration: none;
+        color: #f9f9f9;
+        font-weight: bold;
+    }
+    a:hover{
+        color: #f8b400;
+    }
 }
-
-.nav-left ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-.nav-left ul li a {
-    text-decoration: none;
-    color: #f9f9f9;
-    font-weight: bold;
-}
-
-.nav-left ul li a:hover {
-    color: #f8b400;
-}
-
-/* Search bar styling */
 .nav-right input[type="text"] {
     padding: 5px 10px;
     border-radius: 5px;
@@ -47,22 +41,20 @@ body {
     outline: none;
 }
 
-/* Header with title and description */
-.intro {
+.introduction {
     display: flex;
     justify-content: center;
     padding-top: 0px;
     background-color: #F0E2C8;
     gap: 20px;
-
+    h1 {
+        align-self: center;
+        font-size: 2.5em;
+        color: #333;
+        font-family: fantasy;
+    }
 }
 
-.intro h1 {
-    align-self: center;
-    font-size: 2.5em;
-    color: #333;
-    font-family: fantasy;
-}
 footer {
     text-align: center;
     padding: 10px;
