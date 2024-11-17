@@ -85,6 +85,7 @@ footer {
         height: 400px;
         order: 1;
         padding-top: 5%;
+        border:5px solid #000000; padding:3px; margin:5px”
     }
   }
 
@@ -102,3 +103,38 @@ footer {
         font-size:x-large;
     }
   }
+
+.kareem{
+    display: flex;
+    img{
+        padding-top: 30%;
+        padding-bottom: 30%;
+        height: 380px;
+        width: 700px;
+        border:5px solid #000000; padding:3px; margin:5px”
+     }
+}
+
+
+.gallere{
+    display: flex;
+    img{
+        padding-top: 30%;
+        padding-bottom: 30%;
+        height: 300px;
+        width: 500px;
+        order: 1;
+        border:5px solid #000000; padding:3px; margin:5px”
+     }
+}
+
+.remontada{
+    display: flex;
+    img{
+        padding-top: 30%;
+        padding-bottom: 30%;
+        height: 300px;
+        width: 450px;
+        border:5px solid #000000; padding:3px; margin:5px”
+     }
+}
