@@ -181,7 +181,7 @@ body {
 
     /* Navbar en colonne et menu hamburger */
     .navbar {
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
     }
 
@@ -257,6 +257,7 @@ body {
         color: #333;
         font-family: Montserrat;
     }
+
 
     .classement table {
         width: 100%;
