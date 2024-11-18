@@ -20,24 +20,34 @@ body {
   padding: 10px 20px;
 }
 
+/* Navbar left */
 .nav-left ul {
   list-style-type: none;
   display: flex;
-  gap: 15px;
+  margin: 0;
+  padding: 0;
 }
 
-.nav-left ul li {
-  display: inline;
+.nav-left li {
+  margin: 0 15px;
 }
 
-.nav-left ul li a {
+.nav-left a {
   text-decoration: none;
   color: #f9f9f9;
   font-weight: bold;
 }
 
-.nav-left ul li a:hover {
+.nav-left a:hover {
   color: #f8b400;
+}
+
+/* Search bar styling */
+.nav-right input[type="text"] {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #f8b400;
+  outline: none;
 }
 
 /* Hamburger button */
@@ -81,14 +91,6 @@ body {
   list-style-type: none;
   margin: 0;
   padding: 0;
-}
-
-/* Search bar styling */
-.nav-right input[type="text"] {
-  padding: 5px 10px;
-  border-radius: 5px;
-  border: 1px solid #f8b400;
-  outline: none;
 }
 
 /* Player container */
@@ -184,12 +186,20 @@ footer {
 /* Small screens (Mobile Devices) */
 @media (max-width: 600px) {
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row; /* Align items horizontally */
+    padding: 10px;
+    justify-content: space-between; /* Distribute space between items */
+  }
+
+  /* Align the hamburger button and search bar on the same row */
+  .nav-left {
+    display: flex;
+    align-items: center;
   }
 
   .nav-left ul {
-    display: none; /* Hide the menu on mobile by default */
+    display: none; /* Menu is hidden by default */
+    list-style-type: none;
     flex-direction: column;
     align-items: center;
     background-color: #333;
@@ -198,19 +208,26 @@ footer {
     left: 0;
     width: 100%;
     padding: 20px 0;
+    z-index: 10;
     transition: 0.3s;
   }
 
   .menu-toggle:checked ~ .menu {
-    display: flex; /* Display menu when checkbox is checked */
+    display: flex; /* Display the menu when the checkbox is checked */
   }
 
   .hamburger {
-    display: flex; /* Display hamburger button */
+    display: flex; /* Display the hamburger button */
   }
 
-  .nav-left ul li {
-    margin: 10px 0;
+  /* Adjust the position of the search bar */
+  .nav-right input[type="text"] {
+    width: 80%; /* Make the search bar smaller */
+    margin-left: 20px; /* Add margin to the left */
+  }
+
+  .nav-left li {
+    margin: 5px 0;
   }
 
   .nav-left a {
@@ -220,11 +237,6 @@ footer {
 
   .nav-left a:hover {
     color: #f8b400;
-  }
-
-  .nav-right input[type="text"] {
-    width: 100%;
-    margin-top: 10px;
   }
 
   .player-container {
@@ -239,19 +251,20 @@ footer {
 /* Tablets (max-width: 900px) */
 @media (max-width: 900px) {
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row; /* Align items horizontally */
+    justify-content: space-between;
   }
 
   .nav-left ul {
-    display: none; /* Hide menu by default on tablets */
+    display: none; /* Hide menu by default */
+    list-style-type: none;
     flex-direction: column;
     gap: 10px;
-    width: 100%;
     position: absolute;
     top: 60px;
     left: 0;
     background-color: #333;
+    width: 100%;
     padding: 20px 0;
     transition: 0.3s;
   }
@@ -264,7 +277,7 @@ footer {
     display: flex; /* Display hamburger button */
   }
 
-  .nav-left ul li {
+  .nav-left li {
     margin: 10px 0;
   }
 
