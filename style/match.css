@@ -1,15 +1,18 @@
+/* Reset de base */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Styles de base */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #F0E2C8;
 }
 
+/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -18,6 +21,7 @@ body {
     padding: 10px 20px;
 }
 
+/* Menu principal (éléments de la navbar) */
 .nav-left ul {
     list-style-type: none;
     display: flex;
@@ -37,6 +41,7 @@ body {
     color: #f8b400;
 }
 
+/* Champ de recherche */
 .nav-right input[type="text"] {
     padding: 5px 10px;
     border-radius: 5px;
@@ -44,6 +49,49 @@ body {
     outline: none;
 }
 
+/* Hamburger Button */
+.hamburger {
+    display: none; /* Cacher par défaut */
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.bar {
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* Menu toggle (checkbox) */
+.menu-toggle {
+    display: none; /* Assurez-vous que la checkbox ne soit pas visible */
+    z-index: 10; /* Ajouter un z-index pour les interactions */
+}
+
+.menu-toggle:checked + .hamburger .bar:nth-child(1) {
+    transform: rotate(45deg) translateY(6px); /* Première barre devient une diagonale */
+}
+
+.menu-toggle:checked + .hamburger .bar:nth-child(2) {
+    opacity: 0; /* Cache la deuxième barre */
+}
+
+.menu-toggle:checked + .hamburger .bar:nth-child(3) {
+    transform: rotate(-45deg) translateY(-6px); /* Troisième barre devient une diagonale */
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenu principal */
 .introduction {
     display: flex;
     justify-content: center;
@@ -60,6 +108,7 @@ body {
     font-family: Montserrat;
 }
 
+/* Classement */
 .classement {
     display: flex;
     justify-content: center;
@@ -99,6 +148,7 @@ body {
     color: #f8b400;
 }
 
+/* Section Analyse */
 .analysis {
     max-width: 900px;
     margin: 20px auto;
@@ -124,11 +174,12 @@ body {
     padding: 0 15px;
 }
 
-.analysis br {
-    margin-bottom: 15px;
-}
+/* Media Queries */
 
+/* Petite taille d'écran (smartphones) */
 @media (max-width: 768px) {
+
+    /* Navbar en colonne et menu hamburger */
     .navbar {
         flex-direction: column;
         align-items: flex-start;
@@ -143,19 +194,68 @@ body {
         margin-bottom: 10px;
     }
 
+    /* Champ de recherche */
     .nav-right input[type="text"] {
         margin-top: 10px;
         width: 100%;
         max-width: 300px;
     }
 
-    .intro {
-        flex-direction: column;
-        gap: 10px;
+    /* Hamburger Button */
+    .hamburger {
+        display: flex; /* Affiche le bouton hamburger */
     }
 
-    .intro h1 {
-        font-size: 2em;
+    /* Menu caché par défaut (affiché lorsque le hamburger est cliqué) */
+    .nav-left ul {
+        display: none; /* Cache le menu */
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 20px 0;
+        transition: 0.3s;
+    }
+
+    .menu-toggle:checked ~ .menu {
+        display: flex; /* Affiche le menu lorsque le checkbox est coché */
+    }
+
+    .nav-left li {
+        margin: 10px 0;
+    }
+
+    .nav-left a {
+        color: #f9f9f9;
+        font-size: 1.2em;
+    }
+
+    .nav-left a:hover {
+        color: #f8b400;
+    }
+
+    /* Ajustements pour l'introduction */
+    .introduction {
+        display: flex;
+        justify-content: center;
+        padding-top: 0px;
+        background-color: #F0E2C8;
+    }
+
+    .introduction img{
+        width: auto;
+        height: 150px;
+
+    }
+    
+    .introduction h1 {
+        align-self: center;
+        font-size: 1.5em;
+        color: #333;
+        font-family: Montserrat;
     }
 
     .classement table {
@@ -172,6 +272,7 @@ body {
         font-size: 0.9em;
     }
 
+    /* Section Analyse */
     .analysis {
         padding: 20px;
         margin: 10px;
@@ -187,20 +288,10 @@ body {
     }
 }
 
+/* Très petite taille d'écran (mobiles très petits) */
 @media (max-width: 480px) {
-    .intro h1 {
-        font-size: 1.8em;
-    }
 
-    .classement th,
-    .classement td {
-        padding: 5px;
-    }
-
-    .classement table {
-        font-size: 0.8em; 
-    }
-
+    /* Navbar ajustée pour les très petits écrans */
     .navbar {
         padding: 10px;
     }
@@ -218,8 +309,22 @@ body {
         width: 100%;
         font-size: 0.9em;
     }
+
+    .introduction h1 {
+        font-size: 1.8em;
+    }
+
+    .classement th,
+    .classement td {
+        padding: 5px;
+    }
+
+    .classement table {
+        font-size: 0.8em;
+    }
 }
 
+/* Footer */
 footer {
     text-align: center;
     padding: 10px;
