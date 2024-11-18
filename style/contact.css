@@ -37,11 +37,60 @@ body {
   color: #f8b400;
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
 .nav-right input[type="text"] {
   padding: 5px 10px;
   border-radius: 5px;
   border: 1px solid #f8b400;
   outline: none;
+}
+
+/* Hamburger button */
+.hamburger {
+  display: none; /* Caché par défaut */
+  flex-direction: column;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.bar {
+  width: 30px;
+  height: 4px;
+  background-color: #fff;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+/* Menu toggle (checkbox) */
+.menu-toggle {
+  display: none; /* Assurez-vous que la checkbox ne soit pas visible */
+  z-index: 10;
+}
+
+/* Change hamburger bar appearance when menu is toggled */
+.menu-toggle:checked + .hamburger .bar:nth-child(1) {
+  transform: rotate(45deg) translateY(6px); /* Première barre de hamburger devient une diagonale */
+}
+
+.menu-toggle:checked + .hamburger .bar:nth-child(2) {
+  opacity: 0; /* Cache la deuxième barre */
+}
+
+.menu-toggle:checked + .hamburger .bar:nth-child(3) {
+  transform: rotate(-45deg) translateY(-6px); /* Troisième barre devient une diagonale */
+}
+
+.menu {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 /* Intro Section */
@@ -179,14 +228,30 @@ footer {
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
-  .nav-left ul {
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
+  /* Display hamburger button and menu toggle on tablet */
+  .hamburger {
+    display: flex; /* Affiche le hamburger sur tablette */
   }
 
-  .nav-right input[type="text"] {
+  .nav-left ul {
+    display: none; /* Cache le menu par défaut */
+    list-style-type: none;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #333;
     width: 100%;
+    padding: 20px;
+  }
+
+  .menu-toggle:checked + .hamburger + .menu {
+    display: flex; /* Affiche le menu quand le bouton hamburger est activé */
+  }
+
+  .nav-right {
+    display: none; /* Cache la barre de recherche sur tablette */
   }
 
   .intro h1 {
