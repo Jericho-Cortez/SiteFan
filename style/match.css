@@ -6,10 +6,33 @@
 }
 
 /* Styles de base */
+/* Styles de base */
+html, body {
+    height: 100%; /* Assure que le body occupe toute la hauteur de l'écran */
+}
+
 body {
+    display: flex;
+    flex-direction: column; /* Permet à l'élément body de se diviser en 2 parties */
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #F0E2C8;
+}
+
+main {
+    flex: 1; /* Prend toute la place restante */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    margin-top: auto; /* Assure que le footer soit poussé vers le bas */
 }
 
 /* Navbar */
@@ -108,11 +131,12 @@ body {
     font-family: Montserrat;
 }
 
-/* Classement */
+/* Rendre le tableau réactif */
 .classement {
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    overflow-x: auto; /* Permet le défilement horizontal sur petits écrans */
 }
 
 .classement table {
@@ -121,6 +145,7 @@ body {
     width: 100%;
     max-width: 1000px;
     overflow-x: auto;
+    table-layout: fixed; /* Pour gérer la largeur des colonnes */
 }
 
 .classement th,
@@ -128,6 +153,7 @@ body {
     border: black solid 3px;
     padding: 10px;
     text-align: center;
+    word-wrap: break-word; /* Empêche le texte trop long de déborder */
 }
 
 .classement th {
@@ -247,7 +273,7 @@ body {
 
     .introduction img{
         width: auto;
-        height: 150px;
+        height: 90px;
 
     }
     
