@@ -5,10 +5,32 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%; /* Assure que le body occupe toute la hauteur de l'écran */
+}
+
 body {
+  display: flex;
+  flex-direction: column; /* Permet à l'élément body de se diviser en 2 parties */
   font-family: Arial, sans-serif;
   line-height: 1.6;
   background-color: #F0E2C8;
+}
+
+main {
+  flex: 1; /* Prend toute la place restante */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  margin-top: auto; /* Assure que le footer soit poussé vers le bas */
 }
 
 /* Navbar styling */
