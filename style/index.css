@@ -1,3 +1,4 @@
+/* Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -10,6 +11,7 @@ body {
     background-color: #F0E2C8;
 }
 
+/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -20,10 +22,12 @@ body {
 
 .nav-left ul {
     list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-left li {
-    display: inline;
     margin: 0 15px;
 }
 
@@ -44,82 +48,550 @@ body {
     outline: none;
 }
 
-.introduction-content {
-    display: flex;
-    justify-content: center;
-    padding-top: 0px;
-    background-color: #F0E2C8;
-}
-
-.introduction-content h1 {
-    align-self: center;
-    font-size: 2.5em;
-    color: #333;
-    font-family: Montserrat;
-}
-
-.text {
-    display: flex;
-    justify-content: center;
+/* Hamburger button */
+.hamburger {
+    display: none; /* Caché par défaut */
     flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
 }
 
-.text p {
-    margin-right: 20px;
-    margin-left: 20px;
+.bar {
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: 0.4s;
 }
 
-.upcoming-games {
+/* Menu toggle (checkbox) */
+.menu-toggle {
+    display: none; /* Assurez-vous que la checkbox ne soit pas visible */
+    z-index: 10; /* Ajouter un z-index plus élevé si nécessaire */
+}
+
+
+.menu-toggle:checked + .hamburger .bar:nth-child(1) {
+    transform: rotate(45deg) translateY(6px); /* Première barre de hamburger devient une diagonale */
+}
+
+.menu-toggle:checked + .hamburger .bar:nth-child(2) {
+    opacity: 0; /* Cache la deuxième barre */
+}
+
+.menu-toggle:checked + .hamburger .bar:nth-child(3) {
+    transform: rotate(-45deg) translateY(-6px); /* Troisième barre devient une diagonale */
+}
+
+.menu {
     display: flex;
-    justify-content: center;
-    padding-top: 0px;
-    background-color: #F0E2C8;
+    justify-content: space-around;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
-.upcoming-games h2 {
-    margin-right: 20px;
-    margin-left: 20px;
+/* Media Queries */
+
+/* Petit écran (phones en mode portrait) */
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: row;
+        padding: 10px;
+    }
+
+    .nav-left ul {
+        list-style-type: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+        position: absolute; /* Assurez-vous que le menu soit positionné correctement */
+        top: 60px;
+        left: 0;
+        background-color: #333;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        transition: 0.3s;
+        z-index: 10; /* Assurez-vous que le menu hamburger soit au-dessus des autres éléments */
+    }
+    
+
+    .nav-left li {
+        margin: 5px 0;
+    }
+
+    .nav-right input[type="text"] {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .introduction-content {
+        display: flex;
+        justify-content: center;
+        padding-top: 0px;
+        background-color: #F0E2C8;
+    }
+
+    .introduction-content img{
+        width: auto;
+        height: 100px;
+
+    }
+    
+    .introduction-content h1 {
+        align-self: center;
+        font-size: 0.9em;
+        color: #333;
+        font-family: Montserrat;
+    }
+
+    .text {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .text p {
+        margin: 0 20px;
+        font-size: 0.5em;
+    }
+
+    .upcoming-games {
+        display: flex;
+        justify-content: center;
+        padding-top: 0px;
+        background-color: #F0E2C8;
+    }
+    
+    .upcoming-games h2 {
+        margin-right: 20px;
+        margin-left: 20px;
+        font-size: 0.9em;
+    }
+    
+    .upcoming-games p {
+        align-items: center;
+        font-size: 0.5em;
+    }
+    
+    .upcoming-games img {
+        border-radius: 30px;
+        width: 100px;
+        height: 100px;
+    }
+    
+    .alert_flip {
+        transform: scaleX(-1);
+        position: relative; /* S'assurer que l'élément est positionné correctement */
+        z-index: 1; /* Assurez-vous que l'alert_flip soit derrière le menu */
+    }
+    
+    .upcoming-games-content {
+        background-color: rgba(244, 2, 2, 0.1);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .gallery {
+        margin-top: 30px;
+    }
+    
+    .gallery h2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .gallery .image-grid {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        width: auto;
+        height: 90px;
+    }
+
+    .social-media {
+        font-size: 0.5em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    footer {
+        font-size: 0.5em;
+        text-align: center;
+        padding: 10px;
+        background-color: #333;
+        color: #fff;
+    }
 }
 
-.upcoming-games p {
-    align-items: center;
+/* Écran moyen (tablettes) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .navbar {
+        flex-direction: row;
+        padding: 15px 20px;
+    }
+
+    .nav-left ul {
+        list-style-type: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+        position: absolute; /* Assurez-vous que le menu soit positionné correctement */
+        top: 60px;
+        left: 0;
+        background-color: #333;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        transition: 0.3s;
+        z-index: 10; /* Assurez-vous que le menu hamburger soit au-dessus des autres éléments */
+    }
+
+    .nav-left li {
+        margin: 0 10px;
+    }
+
+    .nav-right input[type="text"] {
+        width: 200px;
+    }
+
+    .introduction-content {
+        display: flex;
+        justify-content: center;
+        padding-top: 0px;
+        background-color: #F0E2C8;
+    }
+
+    .introduction-content img{
+        width: auto;
+        height: 150px;
+
+    }
+    
+    .introduction-content h1 {
+        align-self: center;
+        font-size: 1.5em;
+        color: #333;
+        font-family: Montserrat;
+    }
+
+    .text {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .text p {
+        margin-left: 10px;
+        font-size: 1em;
+    }
+
+    .upcoming-games {
+        display: flex;
+        justify-content: center;
+        padding-top: 0px;
+        background-color: #F0E2C8;
+    }
+    
+    .upcoming-games h2 {
+        font-size: 1.2em;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+    
+    .upcoming-games p {
+        align-items: center;
+        font-size: 1em;
+    }
+    
+    .upcoming-games img {
+        border-radius: 30px;
+        width: auto;
+        height: 100px;
+    }
+    
+    .alert_flip {
+        transform: scaleX(-1);
+        position: relative; /* S'assurer que l'élément est positionné correctement */
+        z-index: 1; /* Assurez-vous que l'alert_flip soit derrière le menu */
+    }
+    
+    .upcoming-games-content {
+        background-color: rgba(244, 2, 2, 0.1);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .gallery {
+        margin-top: 30px;
+    }
+    
+    .gallery h2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .gallery .image-grid {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        width: 768px;
+        height: 150px;
+    }
+    
+}
+
+/* Petites tailles d'écrans (menu hamburger) */
+@media (max-width: 768px) {
+    .nav-left ul {
+        display: none; /* Cache le menu par défaut */
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 20px 0;
+        transition: 0.3s;
+    }
+
+    .menu-toggle:checked ~ .menu {
+        display: flex; /* Affiche le menu quand la checkbox est cochée */
+    }
+
+    .hamburger {
+        display: flex; /* Affiche le bouton hamburger */
+    }
+
+    .nav-left li {
+        margin: 10px 0;
+    }
+
+    .nav-left a {
+        color: #f9f9f9;
+        font-size: 1.2em;
+    }
+
+    .nav-left a:hover {
+        color: #f8b400;
+    }
+}
+
+/* Écrans moyens à grands (Ordinateurs) */
+@media (min-width: 769px) {
+    .navbar {
+        padding: 15px 30px;
+    }
+
+    .nav-left ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-left li {
+        margin: 0 15px;
+    }
+
+    .nav-right input[type="text"] {
+        width: 250px;
+    }
+
+    .introduction-content {
+        display: flex;
+        justify-content: center;
+        padding-top: 0px;
+        background-color: #F0E2C8;
+    }
+    
+    .introduction-content h1 {
+        align-self: center;
+        font-size: 2.5em;
+        color: #333;
+        font-family: Montserrat;
+    }
+
+    .text {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .text p {
+        margin: 0 200px;
+    }
+
+    .upcoming-games {
+        display: flex;
+        justify-content: center;
+        padding-top: 0px;
+        background-color: #F0E2C8;
+    }
+    
+    .upcoming-games h2 {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+    
+    .upcoming-games p {
+        align-items: center;
+    }
+    
+    .upcoming-games img {
+        border-radius: 30px;
+        width: 300px;
+        height: 200px;
+    }
+    
+    .alert_flip {
+        transform: scaleX(-1);
+    }
+    
+    .upcoming-games-content {
+        background-color: rgba(244, 2, 2, 0.1);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .gallery {
+        margin-top: 30px;
+    }
+    
+    .gallery h2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .gallery .image-grid {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        width: auto;
+        height: 300px;
+    }
+    
+}
+
+/* Très grands écrans (ordinateurs et téléviseurs) */
+@media (min-width: 1200px) {
+    .navbar {
+        padding: 20px 40px;
+    }
+
+    .nav-left li {
+        margin: 0 20px;
+    }
+
+    .nav-right input[type="text"] {
+        width: 300px;
+    }
+
+    .introduction-content {
+        display: flex;
+        justify-content: center;
+        padding-top: 0px;
+        background-color: #F0E2C8;
+    }
+    
+    .introduction-content h1 {
+        display: flex;
+        align-self: center;
+        font-size: 2.5em;
+        color: #333;
+        font-family: Montserrat;
+    }
+
+    .text {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .text p {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+
+    .upcoming-games {
+        display: flex;
+        justify-content: center;
+        padding-top: 0px;
+        background-color: #F0E2C8;
+    }
+    
+    .upcoming-games h2 {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+    
+    .upcoming-games p {
+        align-items: center;
+    }
+    
+    .upcoming-games img {
+        border-radius: 30px;
+        width: 300px;
+        height: 200px;
+    }
+    
+    .alert_flip {
+        transform: scaleX(-1);
+    }
+    
+    .upcoming-games-content {
+        background-color: rgba(244, 2, 2, 0.1);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .gallery {
+        margin-top: 30px;
+    }
+    
+    .gallery h2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .gallery .image-grid {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        width: auto;
+        height: 300px;
+    }
+    
+}
+
+/* Image Adjustments */
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 .upcoming-games img {
     border-radius: 30px;
-    width: 300px;
-    height: 200px;
+    max-width: 300px;
 }
 
-.alert_flip {
-    transform: scaleX(-1);
+.gallery .image-grid img {
+    max-width: 300px;
 }
 
-.upcoming-games-content {
-    background-color: rgba(244, 2, 2, 0.1);
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.gallery {
-    margin-top: 30px;
-}
-
-.gallery h2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.gallery .image-grid {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    width: auto;
-    height: 300px;
-}
-
+/* Social Media section */
 .social-media {
     display: flex;
     flex-direction: column;
@@ -131,125 +603,12 @@ body {
     display: flex;
     justify-content: center;
     gap: 16px;
-  }
+}
 
-
+/* Footer */
 footer {
     text-align: center;
     padding: 10px;
     background-color: #333;
     color: #fff;
-}
-
-@media (max-width: 480px) {
-    .navbar {
-        flex-direction: column;
-        padding: 10px;
-    }
-    .nav-left ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .nav-left li {
-        margin: 5px 0;
-    }
-    .nav-right input[type="text"] {
-        width: 100%;
-        margin-top: 10px;
-    }
-    .introduction-content {
-        flex-direction: column;
-        text-align: center;
-    }
-    .introduction-content h1 {
-        font-size: 1.8em;
-    }
-    .text p {
-        margin-right: 20px;
-        margin-left: 20px;
-    }
-    .upcoming-games {
-        flex-direction: column;
-    }
-    .upcoming-games img {
-        width: 100%;
-        height: auto;
-    }
-    .gallery .image-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-@media (min-width: 481px) and (max-width: 768px) {
-    .navbar {
-        flex-direction: row;
-        padding: 15px 20px;
-    }
-    .nav-left ul {
-        display: flex;
-        justify-content: center;
-    }
-    .nav-left li {
-        margin: 0 10px;
-    }
-    .nav-right input[type="text"] {
-        width: 200px;
-    }
-    .introduction-content {
-        flex-direction: row;
-        text-align: center;
-    }
-    .introduction-content h1 {
-        font-size: 2.2em;
-    }
-    .text p {
-        margin-right: 50px;
-        margin-left: 50px;
-    }
-    .upcoming-games {
-        flex-direction: column;
-    }
-    .upcoming-games img {
-        width: 250px;
-        height: 170px;
-    }
-}
-
-@media (min-width: 769px) {
-    .navbar {
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 15px 30px;
-    }
-    .nav-left ul {
-        display: flex;
-        justify-content: center;
-    }
-    .nav-left li {
-        margin: 0 15px;
-    }
-    .nav-right input[type="text"] {
-        width: 250px;
-    }
-    .introduction-content {
-        flex-direction: row;
-    }
-    .introduction-content h1 {
-        font-size: 2.5em;
-    }
-    .text p {
-        margin-right: 200px;
-        margin-left: 200px;
-    }
-    .upcoming-games img {
-        width: 300px;
-        height: 200px;
-    }
-    .gallery .image-grid {
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-    }
 }
