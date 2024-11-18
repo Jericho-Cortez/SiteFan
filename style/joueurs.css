@@ -94,18 +94,6 @@ footer {
   z-index: 10; /* Ajouter un z-index plus élevé si nécessaire */
 }
 
-.menu-toggle:checked + .hamburger .bar:nth-child(1) {
-  transform: rotate(45deg) translateY(6px); /* Première barre de hamburger devient une diagonale */
-}
-
-.menu-toggle:checked + .hamburger .bar:nth-child(2) {
-  opacity: 0; /* Cache la deuxième barre */
-}
-
-.menu-toggle:checked + .hamburger .bar:nth-child(3) {
-  transform: rotate(-45deg) translateY(-6px); /* Troisième barre devient une diagonale */
-}
-
 /* Menu */
 .menu {
   display: flex;

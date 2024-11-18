@@ -93,18 +93,6 @@ footer {
 }
 
 
-.menu-toggle:checked + .hamburger .bar:nth-child(1) {
-    transform: rotate(45deg) translateY(6px); /* Première barre de hamburger devient une diagonale */
-}
-
-.menu-toggle:checked + .hamburger .bar:nth-child(2) {
-    opacity: 0; /* Cache la deuxième barre */
-}
-
-.menu-toggle:checked + .hamburger .bar:nth-child(3) {
-    transform: rotate(-45deg) translateY(-6px); /* Troisième barre devient une diagonale */
-}
-
 .menu {
     display: flex;
     justify-content: space-around;
@@ -218,16 +206,18 @@ footer {
     }
 
     .nav-left ul {
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background-color: #333;
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px 0;
-        z-index: 10;
-        transition: 0.3s;
+        display: none; /* Menu is hidden by default */
+    list-style-type: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    z-index: 10;
+    transition: 0.3s;
     }
 
     .nav-left li {
