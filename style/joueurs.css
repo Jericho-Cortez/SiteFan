@@ -22,11 +22,12 @@ body {
 
 .nav-left ul {
   list-style-type: none;
+  display: flex;
+  gap: 15px;
 }
 
 .nav-left ul li {
   display: inline;
-  margin: 0 15px;
 }
 
 .nav-left ul li a {
@@ -110,13 +111,15 @@ body {
 .intro {
   display: flex;
   justify-content: center;
-  padding-top: 0px;
+  align-items: center;
+  padding: 20px;
   background-color: #F0E2C8;
   gap: 20px;
+  text-align: center;
+  flex-wrap: wrap;
 }
 
 .intro h1 {
-  align-self: center;
   font-size: 3.5em;
   color: #333;
   font-family: Montserrat;
@@ -128,4 +131,66 @@ footer {
   padding: 10px;
   background-color: #333;
   color: #fff;
+}
+
+/* Media Queries */
+
+/* Mobile Devices (max-width: 600px) */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-left ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-right input[type="text"] {
+    width: 100%;
+  }
+
+  .player-container {
+    width: 100%;
+  }
+
+  .intro h1 {
+    font-size: 2em;
+  }
+}
+
+/* Tablets (max-width: 900px) */
+@media (max-width: 900px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-left ul {
+    gap: 10px;
+  }
+
+  .player-row {
+    justify-content: center;
+  }
+
+  .player-container {
+    width: 45%;
+  }
+
+  .intro h1 {
+    font-size: 2.5em;
+  }
+}
+
+/* Larger screens */
+@media (min-width: 1200px) {
+  .player-container {
+    width: 20%;
+  }
+
+  .intro h1 {
+    font-size: 4em;
+  }
 }
