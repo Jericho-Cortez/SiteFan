@@ -200,12 +200,19 @@ footer {
     padding: 0 15px;
 }
 
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+}
+
 /* Media Queries */
-
-/* Petite taille d'écran (smartphones) */
+/* Petites tailles d'écran (smartphones et tablettes) */
 @media (max-width: 768px) {
-
-    /* Navbar en colonne et menu hamburger */
+    
+    /* Navbar et menu hamburger */
     .navbar {
         flex-direction: row;
         align-items: flex-start;
@@ -214,6 +221,23 @@ footer {
     .nav-left ul {
         flex-direction: column;
         margin-top: 10px;
+        display: none; /* Menu caché par défaut */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        padding: 20px 0;
+        transition: 0.3s;
+        align-items: center;
+    }
+
+    .menu-toggle:checked ~ .menu {
+        display: flex; /* Affiche le menu quand la checkbox est cochée */
+    }
+
+    .hamburger {
+        display: flex;
     }
 
     .nav-left li {
@@ -222,76 +246,33 @@ footer {
 
     /* Champ de recherche */
     .nav-right input[type="text"] {
-        margin-top: 10px;
         width: 100%;
         max-width: 300px;
+        margin-top: 10px;
     }
 
-    /* Hamburger Button */
-    .hamburger {
-        display: flex; /* Affiche le bouton hamburger */
-    }
-
-    /* Menu caché par défaut (affiché lorsque le hamburger est cliqué) */
-    .nav-left ul {
-        display: none; /* Cache le menu */
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-        background-color: #333;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        padding: 20px 0;
-        transition: 0.3s;
-    }
-
-    .menu-toggle:checked ~ .menu {
-        display: flex; /* Affiche le menu lorsque le checkbox est coché */
-    }
-
-    .nav-left li {
-        margin: 10px 0;
-    }
-
-    .nav-left a {
-        color: #f9f9f9;
-        font-size: 1.2em;
-    }
-
-    .nav-left a:hover {
-        color: #f8b400;
-    }
-
-    /* Ajustements pour l'introduction */
+    /* Introduction */
     .introduction {
-        display: flex;
-        justify-content: center;
-        padding-top: 0px;
-        background-color: #F0E2C8;
+        gap: 20px;
+        padding-top: 0;
+        text-align: center;
     }
 
-    .introduction img{
-        width: auto;
+    .introduction img {
         height: 90px;
-
     }
-    
+
     .introduction h1 {
-        align-self: center;
         font-size: 1.5em;
-        color: #333;
-        font-family: Montserrat;
     }
 
-
+    /* Classement */
     .classement table {
         width: 100%;
         font-size: 0.9em;
     }
 
-    .classement th,
-    .classement td {
+    .classement th, .classement td {
         padding: 8px;
     }
 
@@ -317,15 +298,14 @@ footer {
 
 /* Très petite taille d'écran (mobiles très petits) */
 @media (max-width: 480px) {
-
     /* Navbar ajustée pour les très petits écrans */
     .navbar {
         padding: 10px;
     }
 
     .nav-left ul {
-        padding-left: 0;
         margin-top: 10px;
+        padding-left: 0;
     }
 
     .nav-left li {
@@ -333,7 +313,6 @@ footer {
     }
 
     .nav-right input[type="text"] {
-        width: 100%;
         font-size: 0.9em;
     }
 
@@ -341,20 +320,11 @@ footer {
         font-size: 1.8em;
     }
 
-    .classement th,
-    .classement td {
+    .classement th, .classement td {
         padding: 5px;
     }
 
     .classement table {
         font-size: 0.8em;
     }
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
 }
