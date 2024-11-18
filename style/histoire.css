@@ -69,6 +69,10 @@ html, body {
     outline: none;
 }
 
+.menu-toggle {
+    display: none; /* Cache la checkbox, mais conserve son état */
+}
+
 /* Header with title and description */
 .intro {
     text-align: center;
@@ -199,4 +203,50 @@ footer {
         border:5px solid #000000; padding:3px; margin:5px”
      }
 }
+
+/* Styles du hamburger et du menu sur les petites tailles d'écran */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Empile les éléments de la navbar */
+        align-items: flex-start;
+    }
+
+    .nav-left ul {
+        display: none; /* Cacher le menu par défaut */
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+    }
+
+    .nav-left ul li {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .menu-toggle:checked + .hamburger + .menu {
+        display: flex; /* Affiche le menu lorsque la checkbox est cochée */
+    }
+
+    /* Le bouton hamburger */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .hamburger .bar {
+        width: 30px;
+        height: 4px;
+        background-color: white;
+        margin: 5px 0;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+}
+
 
