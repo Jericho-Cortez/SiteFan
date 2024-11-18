@@ -40,6 +40,49 @@ body {
   color: #f8b400;
 }
 
+/* Hamburger button */
+.hamburger {
+  display: none; /* Caché par défaut */
+  flex-direction: column;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.bar {
+  width: 30px;
+  height: 4px;
+  background-color: #fff;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+/* Menu toggle (checkbox) */
+.menu-toggle {
+  display: none; /* Assurez-vous que la checkbox ne soit pas visible */
+  z-index: 10; /* Ajouter un z-index plus élevé si nécessaire */
+}
+
+.menu-toggle:checked + .hamburger .bar:nth-child(1) {
+  transform: rotate(45deg) translateY(6px); /* Première barre de hamburger devient une diagonale */
+}
+
+.menu-toggle:checked + .hamburger .bar:nth-child(2) {
+  opacity: 0; /* Cache la deuxième barre */
+}
+
+.menu-toggle:checked + .hamburger .bar:nth-child(3) {
+  transform: rotate(-45deg) translateY(-6px); /* Troisième barre devient une diagonale */
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 /* Search bar styling */
 .nav-right input[type="text"] {
   padding: 5px 10px;
@@ -48,6 +91,7 @@ body {
   outline: none;
 }
 
+/* Player container */
 .player-row {
   display: flex;
   justify-content: space-around;
@@ -108,6 +152,7 @@ body {
   display: block;
 }
 
+/* Intro section */
 .intro {
   display: flex;
   justify-content: center;
@@ -126,6 +171,7 @@ body {
   font-weight: bold;
 }
 
+/* Footer */
 footer {
   text-align: center;
   padding: 10px;
@@ -135,7 +181,7 @@ footer {
 
 /* Media Queries */
 
-/* Mobile Devices (max-width: 600px) */
+/* Small screens (Mobile Devices) */
 @media (max-width: 600px) {
   .navbar {
     flex-direction: column;
@@ -143,12 +189,42 @@ footer {
   }
 
   .nav-left ul {
+    display: none; /* Hide the menu on mobile by default */
     flex-direction: column;
-    gap: 10px;
+    align-items: center;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    transition: 0.3s;
+  }
+
+  .menu-toggle:checked ~ .menu {
+    display: flex; /* Display menu when checkbox is checked */
+  }
+
+  .hamburger {
+    display: flex; /* Display hamburger button */
+  }
+
+  .nav-left ul li {
+    margin: 10px 0;
+  }
+
+  .nav-left a {
+    color: #f9f9f9;
+    font-size: 1.2em;
+  }
+
+  .nav-left a:hover {
+    color: #f8b400;
   }
 
   .nav-right input[type="text"] {
     width: 100%;
+    margin-top: 10px;
   }
 
   .player-container {
@@ -168,7 +244,28 @@ footer {
   }
 
   .nav-left ul {
+    display: none; /* Hide menu by default on tablets */
+    flex-direction: column;
     gap: 10px;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #333;
+    padding: 20px 0;
+    transition: 0.3s;
+  }
+
+  .menu-toggle:checked ~ .menu {
+    display: flex; /* Display menu when checkbox is checked */
+  }
+
+  .hamburger {
+    display: flex; /* Display hamburger button */
+  }
+
+  .nav-left ul li {
+    margin: 10px 0;
   }
 
   .player-row {
