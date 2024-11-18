@@ -115,6 +115,9 @@ footer {
   padding: 0;
 }
 
+
+
+
 /* Player container */
 .player-row {
   display: flex;
@@ -176,16 +179,19 @@ footer {
   display: block;
 }
 
-/* Intro section */
+/* Intro Section */
 .intro {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  background-color: #F0E2C8;
+  padding: 20px 0;
   gap: 20px;
   text-align: center;
-  flex-wrap: wrap;
+}
+
+.intro img {
+  width: auto;
+  height: auto;
 }
 
 .intro h1 {

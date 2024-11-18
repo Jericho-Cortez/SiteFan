@@ -126,7 +126,8 @@ footer {
 }
 
 .intro img {
-  width: 80px;
+  width: auto;
+  height: auto;
 }
 
 .intro h1 {
