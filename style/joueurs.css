@@ -179,7 +179,7 @@ footer {
 
 .intro img {
   width: auto;
-  height: 70%;
+  height: auto;
 }
 
 .intro h1 {
@@ -212,6 +212,11 @@ footer {
     display: flex;
     align-items: center;
   }
+  .intro img {
+    width: auto;
+    height: auto;
+  }
+  
 
   .nav-left ul {
     display: none; /* Menu is hidden by default */
