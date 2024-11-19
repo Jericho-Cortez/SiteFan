@@ -24,7 +24,6 @@ main {
     justify-content: flex-start;
 }
 
-/* Footer */
 footer {
     text-align: center;
     padding: 10px;
@@ -33,7 +32,6 @@ footer {
     margin-top: auto; /* Assure que le footer soit poussé vers le bas */
 }
 
-/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -47,20 +45,17 @@ footer {
     display: flex;
     margin: 0;
     padding: 0;
-}
-
-.nav-left li {
-    margin: 0 15px;
-}
-
-.nav-left a {
-    text-decoration: none;
-    color: #f9f9f9;
-    font-weight: bold;
-}
-
-.nav-left a:hover {
-    color: #f8b400;
+    li {
+        margin: 0 15px;
+    }
+    a {
+        text-decoration: none;
+        color: #f9f9f9;
+        font-weight: bold;
+    }
+    a:hover {
+        color: #f8b400;
+    }
 }
 
 .nav-right input[type="text"] {
@@ -92,7 +87,6 @@ footer {
     z-index: 10; /* Ajouter un z-index plus élevé si nécessaire */
 }
 
-
 .menu {
     display: flex;
     justify-content: space-around;
@@ -106,25 +100,23 @@ footer {
     justify-content: center;
     padding-top: 0px;
     background-color: #F0E2C8;
-}
-
-.introduction-content h1 {
-    display: flex;
-    align-self: center;
-    font-size: 2.5em;
-    color: #333;
-    font-family: Montserrat;
+    h1 {
+        display: flex;
+        align-self: center;
+        font-size: 2.5em;
+        color: #333;
+        font-family: Montserrat;
+    }
 }
 
 .text {
     display: flex;
     justify-content: center;
     flex-direction: column;
-}
-
-.text p {
-    margin-right: 20px;
-    margin-left: 20px;
+    p {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
 }
 
 .upcoming-games {
@@ -132,15 +124,17 @@ footer {
     justify-content: center;
     padding-top: 0px;
     background-color: #F0E2C8;
-}
-
-.upcoming-games h2 {
-    margin-right: 20px;
-    margin-left: 20px;
-}
-
-.upcoming-games p {
-    align-items: center;
+    h2 {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+    p {
+        align-items: center;
+    }
+    img {
+        border-radius: 30px;
+        max-width: 30%;
+    }
 }
 
 .alert_flip {
@@ -156,33 +150,23 @@ footer {
 
 .gallery {
     margin-top: 30px;
+    h2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .image-grid {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        width: auto;
+        height: 300px;
+        img {
+            max-width: 30%;
+        }
+    }
 }
 
-.gallery h2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.gallery .image-grid {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    width: auto;
-    height: 300px;
-}
-
-/* Image Adjustments */
-.upcoming-games img {
-    border-radius: 30px;
-    max-width: auto;
-}
-
-.gallery .image-grid img {
-    max-width: auto;
-}
-
-/* Social Media section */
 .social-media {
     display: flex;
     flex-direction: column;
@@ -195,8 +179,6 @@ footer {
     justify-content: center;
     gap: 16px;
 }
-
-/* Media Queries */
 
 /* Petit écran (phones en mode portrait) */
 @media (max-width: 480px) {
@@ -229,12 +211,13 @@ footer {
         margin-top: 10px;
     }
 
-    .introduction-content img {
+    .introduction-content {
+        img {
         height: 100px;
-    }
-
-    .introduction-content h1 {
-        font-size: 0.9em;
+        }
+        h1 {
+            font-size: 0.9em;
+        }
     }
 
     .upcoming-games h2, .upcoming-games p {
